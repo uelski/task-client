@@ -1,34 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Container, MantineProvider, Title, createTheme, type MantineColorsTuple, AppShell, Group, Flex, Text, Button } from '@mantine/core';
+import '@mantine/core/styles.css';
+
+const myColor: MantineColorsTuple = [
+  '#f1f4fe',
+  '#e4e6ed',
+  '#c8cad3',
+  '#a9adb9',
+  '#9094a3',
+  '#7f8496',
+  '#777c91',
+  '#63687c',
+  '#595e72',
+  '#4a5167'
+];
+
+const theme = createTheme({
+  colors: {
+    myColor,
+  },
+});
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <MantineProvider theme={theme}>
+      <Box bg="black" mih="100dvh" w="100%">
+      <AppShell
+        header={{ height: 60 }}
+        padding="md"
+        >
+          <AppShell.Header withBorder={true} style={{ borderColor: theme!.colors!.myColor![4] }} >
+          <Flex bg="black" c="white" h="100%" justify="space-between">
+              <Group bg="black" c="white" h="100%" px="md">
+                <Text fw={700}>Uelski Tasks</Text>
+              </Group>
+            </Flex>
+          </AppShell.Header>
+          <AppShell.Main>
+            <Container p="lg">
+              <Title c="white" ta="center">Task Manager</Title>
+            </Container>
+
+          </AppShell.Main>
+        </AppShell>
+      </Box>
+    </MantineProvider>
   )
 }
 
