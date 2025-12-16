@@ -1,4 +1,4 @@
-import { Box, Container, MantineProvider, Title, createTheme, type MantineColorsTuple, AppShell, Group, Flex, Text, Button } from '@mantine/core';
+import { Box, Container, MantineProvider, Title, createTheme, type MantineColorsTuple, AppShell, Group, Flex, Text} from '@mantine/core';
 import '@mantine/core/styles.css';
 
 const myColor: MantineColorsTuple = [
