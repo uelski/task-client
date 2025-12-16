@@ -1,5 +1,6 @@
 import { Box, Container, MantineProvider, Title, createTheme, type MantineColorsTuple, AppShell, Group, Flex, Text} from '@mantine/core';
 import '@mantine/core/styles.css';
+import { ProjectList } from './components/ProjectList/ProjectList';
 
 const myColor: MantineColorsTuple = [
   '#f1f4fe',
@@ -38,7 +39,8 @@ function App() {
           </AppShell.Header>
           <AppShell.Main>
             <Container p="lg">
-              <Title c="white" ta="center">Task Manager</Title>
+              <Title c="white" ta="center" p={'lg'}>Task Manager</Title>
+              <ProjectList />
             </Container>
 
           </AppShell.Main>

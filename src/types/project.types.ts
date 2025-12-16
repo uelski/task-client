@@ -7,7 +7,7 @@ export type Project = {
     description?: string;
     createdAt: Date;
     updatedAt: Date;
-  };
+};
   
 export type ProjectWithTasks = Project & {
     tasks: Task[];
@@ -16,4 +16,4 @@ export type ProjectWithTasks = Project & {
 export type ProjectProps = {
     project: ProjectWithTasks;
     onToggleTask: (taskId: number, currentCompleted: boolean) => void;
-  };
+};
