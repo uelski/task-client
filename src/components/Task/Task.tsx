@@ -4,13 +4,13 @@ import type { TaskProps } from "../../types/task.types";
 export const Task = ({ task, onToggleTask }: TaskProps) => {
 
     return (
-        <Flex bg="white" p="md">
-            <Group justify="space-between">
-                <Title order={3}>{task.title}</Title>
-                <Checkbox checked={task.completed} onChange={() => onToggleTask(task.id, task.completed)} />
+        <Flex bg="black" p="md" direction="column" gap="md">
+            <Group>
+                <Checkbox style={{ cursor: 'pointer' }} c="white" checked={task.completed} onChange={() => onToggleTask(task.id, task.completed)} />
+                <Title c="white" order={4}>{task.title}</Title>
+                <ColorSwatch color={task.priority === 'low' ? '#1e631e' : task.priority === 'medium' ? '#c3c312' : '#a91c1c'} />
             </Group>
-            <Text size="sm">{task.description}</Text>
-            <ColorSwatch color={task.priority === 'low' ? 'green' : task.priority === 'medium' ? 'yellow' : 'red'} />
+            <Text size="sm" c="white">{task.description}</Text>
         </Flex>
     )
 }
