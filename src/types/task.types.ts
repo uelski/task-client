@@ -3,9 +3,11 @@ export type Task = {
     title: string;
     description?: string;
     createdAt: Date;
+    updatedAt: Date;
     completed: boolean;
     priority: 'low' | 'medium' | 'high';
-    projectId: string;
+    projectId: number;
+    active: boolean;
 }
 
 export type TaskProps = {
