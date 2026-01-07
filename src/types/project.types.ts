@@ -17,3 +17,8 @@ export type ProjectProps = {
     project: ProjectWithTasks;
     onToggleTask: (taskId: number, currentCompleted: boolean) => void;
 };
+
+export type AddProjectProps = {
+    title: string;
+    description?: string;
+}
